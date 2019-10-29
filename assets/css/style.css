@@ -11,6 +11,10 @@ aside {
     padding: 5%;
 }
 
-.card {
+.content {
     margin: 1%;
+}
+
+.sidebar {
+    margin-top: 0.5%;
 }
