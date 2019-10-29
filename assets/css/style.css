@@ -2,10 +2,15 @@ header {
     background-color: black;
     color: white;
     margin-bottom: -0.5%;
+    padding: 1%;
 }
 aside {
-    background-color: grey;
+    background-color: #dddddd;
 }
 .input-group {
     padding: 5%;
+}
+
+.card {
+    margin: 1%;
 }
