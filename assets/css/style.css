@@ -27,4 +27,6 @@ header {
 .lone-day {
     background-color: teal;
     color: white;
+    padding: 1%;
+    margin: 3%;
 }
