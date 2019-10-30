@@ -24,3 +24,7 @@ header {
 #forecast {
     margin-top: 1.5%;
 }
+.lone-day {
+    background-color: teal;
+    color: white;
+}
