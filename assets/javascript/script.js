@@ -34,6 +34,7 @@ function initSearch() {
             var day3 = $('#day3')
             var day4 = $('#day4')
             var day5 = $('#day5')
+            
             console.log(response.list[1].wind.speed)
             
         })
