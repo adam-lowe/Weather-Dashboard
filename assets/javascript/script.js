@@ -24,6 +24,19 @@ function initSearch() {
         }).then(function (response) {
             $('#uvIndex').html("UVIndex: " + response.value)
         })
+        $.ajax({
+            url: "http://api.openweathermap.org/data/2.5/forecast?apikey=166a433c57516f51dfab1f7edaed8413&q=" + searchParam + "&units=imperial",
+            method: "GET"
+        }).then(function (response) {
+            //I know this isn't dry, I just don't have the spare brainpower to make it so
+            var day1 = $('#day1')
+            var day2 = $('#day2')
+            var day3 = $('#day3')
+            var day4 = $('#day4')
+            var day5 = $('#day5')
+            console.log(response.list[1].wind.speed)
+            
+        })
 
 
     })
