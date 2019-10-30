@@ -13,8 +13,8 @@ function initSearch() {
         var today = new Date();
         var date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
         var icon = response.weather[0].icon
-        $('#cityName').html(response.name + " " + date + "<img>")
-        $('img').attr('src', 'http://openweathermap.org/img/wn/'+ icon +'.png')
+        $('#cityName').html(response.name + " " + date + "<img id='ico'>")
+        $('#ico').attr('src', 'http://openweathermap.org/img/wn/'+ icon +'.png')
         $('#temp').html("Temperature: " + response.main.temp)
         $('#humid').html("Humidity: " + response.main.humidity)
         $('#windSpeed').html("Wind Speed: " + response.wind.speed)
