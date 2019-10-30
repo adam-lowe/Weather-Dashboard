@@ -7,7 +7,9 @@ function initSearch() {
     }).then(function (response) {
         var today = new Date();
         var date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
-        $('#cityName').html(response.name + " " + date)
+        var icon = response.weather[0].icon
+        $('#cityName').html(response.name + " " + date + "<img>")
+        $('img').attr('src', 'http://openweathermap.org/img/wn/'+ icon +'.png')
         $('#temp').html("Temperature: " + response.main.temp)
         $('#humid').html("Humidity: " + response.main.humidity)
         $('#windSpeed').html("Wind Speed: " + response.wind.speed)
@@ -17,7 +19,7 @@ function initSearch() {
         }).then(function (response) {
             $('#uvIndex').html("UVIndex: " + response.value)
         })
-
+        
 
     })
 }
