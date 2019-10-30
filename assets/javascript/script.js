@@ -34,6 +34,15 @@ function initSearch() {
             var day3 = $('#day3')
             var day4 = $('#day4')
             var day5 = $('#day5')
+
+            for (let i = 0; i < 6; i++) {
+                var cDay = ($('#day'+ i))
+                var cResponse = response.list[(8*i)]
+                cDay.children('.date').html('<p>' + date + '</p>')
+                cDay.children('.ico').html()
+                cDay.children('.temp').html()
+                cDay.children('.humid').html()
+            }
             
             console.log(response.list[1].wind.speed)
             
