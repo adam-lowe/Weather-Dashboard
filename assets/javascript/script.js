@@ -1,0 +1,2 @@
+var history = [];
+function initSearch() {
