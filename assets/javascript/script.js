@@ -1,4 +1,9 @@
 var history = [];
+
+$('#searchArea').val('charlotte');
+initSearch();
+$('#searchArea').val('')
+
 function initSearch() {
     var searchParam = $('#searchArea').val();
     $.ajax({
@@ -19,7 +24,7 @@ function initSearch() {
         }).then(function (response) {
             $('#uvIndex').html("UVIndex: " + response.value)
         })
-        
+
 
     })
 }
