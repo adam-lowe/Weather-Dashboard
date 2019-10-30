@@ -15,7 +15,7 @@ function initSearch() {
         var icon = response.weather[0].icon
         $('#cityName').html(response.name + " " + date + "<img id='ico'>")
         $('#ico').attr('src', 'http://openweathermap.org/img/wn/'+ icon +'.png')
-        $('#temp').html("Temperature: " + response.main.temp)
+        $('#temp').html("Temperature: " + response.main.temp + "°F")
         $('#humid').html("Humidity: " + response.main.humidity)
         $('#windSpeed').html("Wind Speed: " + response.wind.speed)
         $.ajax({
