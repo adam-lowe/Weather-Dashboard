@@ -1,15 +1,12 @@
-var pastSearches = [];
 
-$('#searchArea').val('charlotte');
+$('#searchArea').val('Charlotte');
 initSearch();
 $('#searchArea').val('')
-
-pastSearches = [];
 
 
 function initSearch() {
     var searchParam = $('#searchArea').val();
-    pastSearches.push(searchParam);
+    searchListInit(searchParam);
     $.ajax({
         url: "http://api.openweathermap.org/data/2.5/weather?apikey=166a433c57516f51dfab1f7edaed8413&q=" + searchParam + "&units=imperial",
         method: "GET"
@@ -31,13 +28,6 @@ function initSearch() {
             url: "http://api.openweathermap.org/data/2.5/forecast?apikey=166a433c57516f51dfab1f7edaed8413&q=" + searchParam + "&units=imperial",
             method: "GET"
         }).then(function (response) {
-            //I know this isn't dry, I just don't have the spare brainpower to make it so
-            var day1 = $('#day1')
-            var day2 = $('#day2')
-            var day3 = $('#day3')
-            var day4 = $('#day4')
-            var day5 = $('#day5')
-
             for (let i = 0; i < 6; i++) {
                 var cResponse = response.list[(8*i)]
                 var d = moment().add(i,'days').format('MM/DD/YYYY')
@@ -56,4 +46,8 @@ function initSearch() {
 
 
     })
+}
+function searchListInit(searchName) {
+    $('.input-group').after('<p class="row item">' + searchName + '</p>');
+    
 }
