@@ -6,6 +6,7 @@ $('#searchArea').val('')
 
 function initSearch() {
     var searchParam = $('#searchArea').val();
+    pastSearches.push('searchParam');
     $.ajax({
         url: "http://api.openweathermap.org/data/2.5/weather?apikey=166a433c57516f51dfab1f7edaed8413&q=" + searchParam + "&units=imperial",
         method: "GET"
