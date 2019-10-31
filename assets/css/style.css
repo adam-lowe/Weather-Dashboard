@@ -21,6 +21,9 @@ header {
 .sidebar {
     margin-top: 0.5%;
 }
+.item {
+    padding-left: 12%;
+}
 #forecast {
     margin-top: 1.5%;
 }
