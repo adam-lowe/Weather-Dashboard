@@ -1,3 +1,4 @@
+// this function originally had a purpose in locally storing, but now it only exists to have the page filled with content on load
 function autoSearch(searchName){
     
     $('#searchArea').val(searchName);
@@ -7,9 +8,11 @@ function autoSearch(searchName){
 
 autoSearch('Charlotte')
 
+// This function controls the entire process of getting api results and putting them in the right places
 function initSearch() {
     var searchParam = $('#searchArea').val();
     searchListInit(searchParam);
+    // ajax url call gets the data for today's weather
     $.ajax({
         url: "https://api.openweathermap.org/data/2.5/weather?apikey=166a433c57516f51dfab1f7edaed8413&q=" + searchParam + "&units=imperial",
         method: "GET"
@@ -21,12 +24,14 @@ function initSearch() {
         $('#temp').html("Temperature: " + response.main.temp + "°F")
         $('#humid').html("Humidity: " + response.main.humidity)
         $('#windSpeed').html("Wind Speed: " + response.wind.speed)
+        // this ajax url call gets the UVIndex from openweathermap.org
         $.ajax({
             url: "https://api.openweathermap.org/data/2.5/uvi?appid=166a433c57516f51dfab1f7edaed8413&lat=" + response.coord.lat + "&lon=" + response.coord.lon + "",
             method: "GET"
         }).then(function (response) {
             $('#uvIndex').html("UVIndex: " + response.value)
         })
+        // this ajax url call gets the 5-day forecast
         $.ajax({
             url: "https://api.openweathermap.org/data/2.5/forecast?apikey=166a433c57516f51dfab1f7edaed8413&q=" + searchParam + "&units=imperial",
             method: "GET"
@@ -48,6 +53,7 @@ function initSearch() {
 
     })
 }
+//  This function runs whenever someone searches something in order to add it to the history list
 function searchListInit(searchName) {
     $('.input-group').after('<p onclick="autoSearch($(this).text())" class="row item">' + searchName + '</p>');
     
