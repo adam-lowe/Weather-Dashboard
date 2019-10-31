@@ -1,8 +1,11 @@
+function autoSearch(searchName){
+    
+    $('#searchArea').val(searchName);
+    initSearch();
+    $('#searchArea').val('')
+}
 
-$('#searchArea').val('Charlotte');
-initSearch();
-$('#searchArea').val('')
-
+autoSearch('Charlotte')
 
 function initSearch() {
     var searchParam = $('#searchArea').val();
@@ -40,14 +43,12 @@ function initSearch() {
                 cDay.children('.humid').html('Humidity: ' + cResponse.main.humidity + '%')
             }
             
-            console.log(response.list[1].wind.speed)
-            
         })
 
 
     })
 }
 function searchListInit(searchName) {
-    $('.input-group').after('<p class="row item">' + searchName + '</p>');
+    $('.input-group').after('<p onclick="autoSearch($(this).text())" class="row item">' + searchName + '</p>');
     
 }
