@@ -1,14 +1,14 @@
 html {
     background-color: #cccccc;
 }
-.row {
-    background-color: #cccccc;
-}
 header {
     background-color: black;
     color: white;
     margin-bottom: -0.5%;
     padding: 1%;
+}
+.back {
+    background-color: #cccccc;
 }
 .input-group {
     padding: 5%;
