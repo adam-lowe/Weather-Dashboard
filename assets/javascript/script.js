@@ -10,8 +10,7 @@ function initSearch() {
         url: "http://api.openweathermap.org/data/2.5/weather?apikey=166a433c57516f51dfab1f7edaed8413&q=" + searchParam + "&units=imperial",
         method: "GET"
     }).then(function (response) {
-        var today = new Date();
-        var date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
+        date = moment().format('MM/DD/YYYY');
         var icon = response.weather[0].icon
         $('#cityName').html(response.name + " " + date + "<img id='ico'>")
         $('#ico').attr('src', 'http://openweathermap.org/img/wn/'+ icon +'.png')
@@ -36,12 +35,15 @@ function initSearch() {
             var day5 = $('#day5')
 
             for (let i = 0; i < 6; i++) {
-                var cDay = ($('#day'+ i))
                 var cResponse = response.list[(8*i)]
-                cDay.children('.date').html('<p>' + date + '</p>')
-                cDay.children('.ico').html()
-                cDay.children('.temp').html()
-                cDay.children('.humid').html()
+                var d = moment().add(i,'days').format('MM/DD/YYYY')
+                if (i===5) {cResponse = response.list[(8*i)-1];}
+                var cDay = ($('#day'+ i))
+                var cIcon = cResponse.weather[0].icon
+                cDay.children('.date').html('<p>' + d + '</p>')
+                cDay.children('.icon').html('<img src="http://openweathermap.org/img/wn/'+ cIcon +'.png" alt="weather icon">')
+                cDay.children('.temp').html('Temperature: '+ cResponse.main.temp)
+                cDay.children('.humid').html('Humidity: ' + cResponse.main.humidity + '%')
             }
             
             console.log(response.list[1].wind.speed)
