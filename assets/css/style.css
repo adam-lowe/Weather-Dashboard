@@ -21,6 +21,9 @@ header {
 .sidebar {
     margin-top: 0.5%;
 }
+aside {
+    background-color: #bbbbbb;
+}
 .item {
     padding-left: 12%;
 }
