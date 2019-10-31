@@ -1,4 +1,4 @@
-var history = [];
+var pastSearches = [];
 
 $('#searchArea').val('charlotte');
 initSearch();
