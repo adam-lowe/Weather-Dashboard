@@ -3,6 +3,9 @@ var historyArr = ['']
 // Checks if a history list already exists
 if (localStorage.getItem('historyList') !== null) {
     historyArr = JSON.parse(localStorage.getItem('historyList'))
+    autoSearch(historyArr[historyArr.length - 1])
+} else {
+autoSearch('Charlotte')
 }
 // this function originally had a purpose in locally storing, but now it only exists to have the page filled with content on load
 function autoSearch(searchName) {
@@ -12,7 +15,7 @@ function autoSearch(searchName) {
     $('#searchArea').val('')
 }
 
-autoSearch('Charlotte')
+
 
 // This function controls the entire process of getting api results and putting them in the right places
 function initSearch() {
