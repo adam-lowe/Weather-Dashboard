@@ -1,7 +1,7 @@
 var historyArr = ['']
 
 // Checks if a history list already exists
-if (localStorage.getItem('historyList') !== 'null') {
+if (localStorage.getItem('historyList') !== null) {
     historyArr = JSON.parse(localStorage.getItem('historyList'))
 }
 // this function originally had a purpose in locally storing, but now it only exists to have the page filled with content on load
