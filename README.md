@@ -1,6 +1,6 @@
-# Homework 6 - Weather Dashboard
+# Weather Dashboard
 
-This repo is for the UNCC coding bootcamp's Sixth homework assignment
+This repo is for the UNCC coding bootcamp
 
 ## Instructions
 
