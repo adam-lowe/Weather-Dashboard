@@ -14,4 +14,4 @@ Create a webpage that calls the open weather api and use it to display weather i
 
 [Github Repo](https://github.com/adam-lowe/HW6-Weather-Dashboard)
 
-[Completed Work](https://adam-lowe.github.io/HW6-Weather-Dashboard)
+[Completed Work](https://adam-lowe.github.io/Weather-Dashboard/)
